@@ -3,16 +3,16 @@ spring:
     name: workshop-be-sql
 
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=sba_workshop;encrypt=true;trustServerCertificate=true
-    username: sa
-    password: 12345
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:postgresql://turntable.proxy.rlwy.net:47505/railway
+    username: postgres
+    password: xQPukItHeDhbmKPgdztbmVHzXqwvqWMH
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-    database-platform: org.hibernate.dialect.SQLServerDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 server:
   port: 8080
