@@ -26,4 +26,8 @@ public class Role {
     @OneToMany(mappedBy = "role")
     @JsonIgnore
     private List<User> users = new ArrayList<>(); // set: kh trùng
+
+    public Role(String roleName) {
+        this.roleName = roleName;
+    }
 }

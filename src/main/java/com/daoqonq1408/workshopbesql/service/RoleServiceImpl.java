@@ -1,5 +1,6 @@
 package com.daoqonq1408.workshopbesql.service;
 
+import com.daoqonq1408.workshopbesql.dto.response.CreateRoleRequestDTO;
 import com.daoqonq1408.workshopbesql.model.Role;
 import com.daoqonq1408.workshopbesql.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,10 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public Role addRole(Role role) {
+    public Role addRole(CreateRoleRequestDTO role) {
         Role roleTemp = roleRepository.findByRoleName(role.getRoleName());
         if(roleTemp == null){
-            return roleRepository.save(role);
+            return roleRepository.save(new Role(role.getRoleName()));
         }
         return roleTemp;
     }

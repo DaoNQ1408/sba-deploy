@@ -1,5 +1,6 @@
 package com.daoqonq1408.workshopbesql.service;
 
+import com.daoqonq1408.workshopbesql.dto.request.CreateUserRequestDTO;
 import com.daoqonq1408.workshopbesql.model.User;
 import com.daoqonq1408.workshopbesql.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User addUser(User user) {
+    public User addUser(CreateUserRequestDTO user) {
         User userTemp = userRepository.findByUsername(user.getUsername());
         if (userTemp != null) {
             return userTemp;
         }
-        return userRepository.save(user);
+        User u = new User();
+        u.setUsername(user.getUsername());
+        u.setPassword(user.getPassword());
+        u.setRole(user.getRole());
+        return userRepository.save(u);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.daoqonq1408.workshopbesql.controller;
 
+import com.daoqonq1408.workshopbesql.dto.request.CreateUserRequestDTO;
 import com.daoqonq1408.workshopbesql.model.Role;
 import com.daoqonq1408.workshopbesql.model.User;
 import com.daoqonq1408.workshopbesql.service.UserService;
@@ -28,7 +29,7 @@ public class UserController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> addUser(@RequestBody User user) {
+    public ResponseEntity<?> addUser(@RequestBody CreateUserRequestDTO user) {
         return ResponseEntity.ok(userService.addUser(user));
     }
 
