@@ -8,9 +8,9 @@ spring:
 #    password: xQPukItHeDhbmKPgdztbmVHzXqwvqWMH
 #    driver-class-name: org.postgresql.Driver
   datasource:
-    url: jdbc:mysql://localhost:3306/sba-workshop?useSSL=true&requireSSL=true&serverTimezone=UTC
-    username: root
-    password: 12345678
+    url: jdbc:mysql://ip:port/DBname?useSSL=true&requireSSL=true&serverTimezone=UTC
+    username: username
+    password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 #  jpa:
@@ -29,7 +29,7 @@ server:
 
 app:
   jwt:
-    secret: 1daa7bd734896c27185b8468133c820c
+    secret: key
     expiration-ms: 1440000
 
   springdoc:
